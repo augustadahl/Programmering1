@@ -8,7 +8,7 @@ public class Läxa36 {
 		
 		System.out.println("Vad heter du");
 		
-		String name = input.nextLine();
+		String namn = input.nextLine();
 		
 		System.out.println("Hur gammal är du?");
 		
@@ -31,6 +31,16 @@ public class Läxa36 {
 		String telefon = input.nextLine();
 		
 		input.close();
+
+		System.out.println("Information:");
+	 
+		System.out.println("Namn: " + namn);
+		
+		System.out.println("Ålder: " + ålder);
+		
+		System.out.println("Adress: " + adress + "\r        " + postnummer + " " + stad);
+		
+		System.out.println("Telefon: " + telefon);
 
 		
 	}
