@@ -10,7 +10,10 @@ public class Läxa36 {
 		
 		String name = input.nextLine();
 		
-		System.out.println(name);
+		System.out.println("Hur gammal är du?");
+		
+		String ålder = input.nextLine();
+
 		
 	}
 	
