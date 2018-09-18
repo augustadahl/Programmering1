@@ -6,9 +6,9 @@ public class Läxa_v37 {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Skriv 10 siffror");
-		
 		//frågar efer 10 tal
+		
+		System.out.println("Skriv 10 heltal:");
 		
 		int tal1 = input.nextInt(); 
 		int tal2 = input.nextInt();
