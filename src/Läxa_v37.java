@@ -8,7 +8,9 @@ public class Läxa_v37 {
 		
 		System.out.println("Skriv 10 siffror");
 		
-		int tal1 = input.nextInt(); //frågar efer 10 tal
+		//frågar efer 10 tal
+		
+		int tal1 = input.nextInt(); 
 		int tal2 = input.nextInt();
 		int tal3 = input.nextInt();
 		int tal4 = input.nextInt();
@@ -21,8 +23,12 @@ public class Läxa_v37 {
 		
 		input.close();
 		
+		// räknar ut summa och medel
+		
 		int summa = tal1+tal2+tal3+tal4+tal5+tal6+tal7+tal8+tal9+tal10; //räknar ut medelvärdet
 		double medel = summa / 10.0;
+		
+		//testar största värdet
 		
 		int stor = tal1; //1
 		
@@ -54,13 +60,45 @@ public class Läxa_v37 {
 			stor = tal10;
 		}
 		
+		// testar minsta värdet
+		
+		int minst = tal1; //1
+		
+		if (minst >= tal2) { //2
+			minst = tal2;
+		}
+		if (minst >= tal3) { //3
+			minst = tal3;
+		}
+		if (minst >= tal4) { //4
+			minst = tal4;
+		}
+		if (minst >= tal5) { //5
+			minst = tal5;
+		}
+		if (minst >= tal6) { //6
+			minst = tal6;
+		}
+		if (minst >= tal7) { //7
+			minst = tal7;
+		}
+		if (minst >= tal8) { //8
+			minst = tal8;
+		}
+		if (minst >= tal9) { //9
+			minst = tal9;
+		}
+		if (minst >= tal10) { //10
+			minst = tal10;
+		}
 		
 		
-		// om tal2 >= största tal så är tal2 störst just nu annars testa nästa tal
+		// output
 
-		System.out.println(summa);
-		System.out.println("medel: " + medel);
-		System.out.println("största talet är: " + stor);
+		System.out.println("Summa: " + summa);
+		System.out.println("Medelvärdet: " + medel);
+		System.out.println("Största talet: " + stor);
+		System.out.println("Minsta talet: " + minst);
 		
 	}
 	
