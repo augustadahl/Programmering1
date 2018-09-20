@@ -1,3 +1,4 @@
+package Misc;
 
 public class heltal_25_50 {
 
