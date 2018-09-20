@@ -1,3 +1,4 @@
+package läxor;
 import java.util.Scanner;
 
 public class Läxa36 {
