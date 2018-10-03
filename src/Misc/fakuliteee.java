@@ -22,7 +22,7 @@ public class fakuliteee {
 			System.out.println(summa);
 		}
 		System.out.println();
-		System.out.println("Ditt slutgiltiga resultat är:");
+		System.out.println("Ditt slutgiltiga resultat är bra:");
 		System.out.print(summa);
 	
 		
