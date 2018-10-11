@@ -11,6 +11,8 @@ public class V38_lektionsuppgifter {
 				System.out.println(i);
 		}
 		System.out.println("summa: " + summa);
+		
+		
 	
 	}
 }
