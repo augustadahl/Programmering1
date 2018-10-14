@@ -10,7 +10,11 @@ public class v41 {
 		
 		//System.out.println(volume(sc.nextDouble()));
 		
-		System.out.println(reverse(sc.nextLine()));
+		//System.out.println(reverse(sc.nextLine()));
+		
+		//System.out.println(count(sc.nextLine(), sc.next().charAt(0)));
+		
+		System.out.println(sjorovare(sc.nextLine()));
 		
 	}
 	
@@ -31,6 +35,42 @@ public class v41 {
 		}
 		
 		return reverse;
+	}
+	
+	public static int count(String str, char c) {
+		
+		int count = 0;
+		
+		for(int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) == c) {
+				count++;
+			}
+		}
+		return count;
+		
+	}
+	
+	public static String sjorovare(String str) {
+		
+		String sjorovare = "";
+		
+		String vokaler = "aouåeiyäö";
+		
+		for(int i = 0; i < str.length(); i++) {
+			
+			for(int a = 0; a < vokaler.length(); a++) {
+				
+				if(str.charAt(i) == vokaler.charAt(a)) {
+					sjorovare = sjorovare + str.charAt(i);
+				}
+			}
+			
+			sjorovare = sjorovare + str.charAt(i) + 'o' + str.charAt(i);
+			
+		} //aouå eiyäö hohejoj jojagog hohetoteror augogsostot
+		
+		return sjorovare;
+		
 	}
 	
 }
