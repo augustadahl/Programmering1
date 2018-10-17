@@ -56,39 +56,40 @@ public class v41 {
 		
 		String konsonanter = "bcdfghjklmnpqrstvwz";
 		
-		boolean text = false;
+		boolean konsonant = false;
 
 		
 		for(int i = 0; i < str.length(); i++) {
 			
-			text = false;
+			konsonant = false;
 			
 			for(int a = 0; a < konsonanter.length(); a++) {
 				
 				if(str.toLowerCase().charAt(i) == konsonanter.charAt(a)) {
 					sjorovare = sjorovare + str.charAt(i) + 'o' + str.toLowerCase().charAt(i);
-					text = true;
+					konsonant = true;
 				}
 				
 			}
 			
 			if(str.charAt(i) == 'x') {
 				sjorovare = sjorovare + "koksos";
-				text = true;
+				konsonant = true;
 			}
 			
 			if(str.charAt(i) == 'X') {
 				sjorovare = sjorovare + "Koksos";
-				text = true;
+				konsonant = true;
 			}
 			
-			if(text != true) {
+			if(konsonant != true) {
 				sjorovare = sjorovare + str.charAt(i);
 			}
 			
 		}
 		
 		return sjorovare;
+		
 		
 	}
 	
