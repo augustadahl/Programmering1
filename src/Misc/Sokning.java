@@ -151,30 +151,56 @@ public class Sokning {
 
 		// 9
 		int summa7 = 0;
-		boolean temp = true;
+		boolean unik = true;
 
-		//den som testas = i
-		for (int i = 0; i < names.length; i++) { 
-			//i testas för varje j
+		// den som testas = i
+		for (int i = 0; i < names.length; i++) {
+			// i testas för varje j
 			for (int j = 0; j < names.length; j++) {
 				// så länge inte dom är samma index
 				if (j != i) {
-					//om i och j är samma så betyder det att den inte är unik 
+					// om i och j är samma så betyder det att den inte är unik
 					if (names[i].equals(names[j])) {
-						System.out.println(false);
-						temp = false;
+						unik = false;
+						//System.out.println(names[i] + " " + names[j]);
 					}
 				}
 			}
+			if (unik == true) {
+				summa7++;
+			} else {
+				unik = true;
+			}
 		}
 
-		if (temp = false) {
-			temp = true;
-		} else {
-			summa7++;
-		}
-		System.out.println("uppg. 9 = " + summa7);
+		System.out.println("uppg. 9 = " + summa7 + "st."); //blir 88 ska vara 70
 
+		// detta programmet räknar ut hur många namn det bara finns en av. låt säga att
+		// det finns 2 st maria så räknar den dem som 0 istället för 1. 
+		//Skapa ett sätt att räkna ut om ett namn blivit testat tidigare.
+
+		// 10
+		int[] antal = new int[100];
+		String mostcommon = "";
+		int maxantal = 0;
+		
+		for (int i = 0; i < names.length; i++) {
+			
+			for (int j = 0; j < names.length; j++) {
+				
+				if (names[i].equals(names[j])) {
+					antal[i]++;
+				}
+			}
+			if (antal[i] > maxantal) {
+				maxantal = antal[i];
+				mostcommon = names[i];
+			}
+		}	
+		System.out.println("uppg. 10 = " + mostcommon + ". antal: " + maxantal);
+
+		
+		
 	}
 
 }
