@@ -16,7 +16,7 @@ public class What_does_the_fox_say {
 		
 		String record = sc.nextLine();
 
-		String[] recordarr = new String[arrsize("gg")];
+	/*	String[] recordarr = new String[arrsize("gg")];
 
 		int startAt = 0;
 
@@ -35,19 +35,45 @@ public class What_does_the_fox_say {
 		
 		for (int i = 0; i < recordarr.length; i++) {
 			System.out.println(recordarr[i]);
-		}
+		} */
 
-//			String notfox = "";
-//			
-//			while (true) {
-//				String str = sc.nextLine();
-//				if (str.equals("what does the fox say?")) {
-//					break;
-//				}
-//				else {
-//				notfox = notfox + animalsound(str) + " ";
-//				}
-//			}
+			String notfox = "";
+			
+			while (true) {
+				String str = sc.nextLine();
+				if (str.equals("what does the fox say?")) {
+					break;
+				}
+				else {
+				notfox = notfox + animalsound(str) + " ";
+				}
+			}
+			
+			System.out.println(notfox);
+			
+			String[] notfoxArr = new String [arrsize(notfox)];
+			
+			int i = 0;
+				
+				for (int j = 0; j < notfox.length(); j++) {
+					
+					if (notfox.charAt(j) != ' ') {
+						notfoxArr[i] = notfoxArr[i] + notfox.charAt(j);
+					} 
+					else {
+						i++;
+					}
+				}
+				
+				for (int j = 0; j < notfoxArr.length; j++) {
+					System.out.println(notfoxArr[j] + " ");
+				}
+
+			
+			
+			
+			//String str = "Hello World!";
+			//String strNew = str.substring(0, str.length()-1); //strNew is 'Hello World'
 
 		// }
 
@@ -55,7 +81,7 @@ public class What_does_the_fox_say {
 
 	// methods
 
-	public static String arr(String str, int startAt) {
+/*	public static String arr(String str, int startAt) {
 
 		String arr = "";
 
@@ -71,7 +97,7 @@ public class What_does_the_fox_say {
 
 		return arr;
 
-	}
+	} */
 
 	public static int arrsize(String str) {
 		int arrsize = 0;
