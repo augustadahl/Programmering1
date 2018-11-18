@@ -10,94 +10,92 @@ public class What_does_the_fox_say {
 
 		Scanner sc = new Scanner(System.in);
 
-		// int cases = sc.nextInt();
+		int cases = sc.nextInt();
 
-		// for (int i = 0; i < cases; i++) {
-		
-		String record = sc.nextLine();
+		for (int i = 0; i < cases; i++) {
 
-	/*	String[] recordarr = new String[arrsize("gg")];
-
-		int startAt = 0;
-
-		for (int i = 0; i < recordarr.length; i++) {
-
-			for (int j = startAt; j < record.length(); j++) {
-
-				if (record.charAt(j) != ' ') {
-					recordarr[i] = recordarr[i] + record.charAt(j);
-				} else {
-					startAt = j + 1;
-					break;
-				}
-			}
-		}
-		
-		for (int i = 0; i < recordarr.length; i++) {
-			System.out.println(recordarr[i]);
-		} */
+			String record = sc.nextLine(); // inspelningen.
 
 			String notfox = "";
-			
-			while (true) {
+
+			while (true) { // skriver om alla animal goes sound till en string med bara sound
 				String str = sc.nextLine();
-				if (str.equals("what does the fox say?")) {
+				if (str.equals("what does the fox say?")) { // bryter när what does the fox say? skrivs.
 					break;
-				}
-				else {
-				notfox = notfox + animalsound(str) + " ";
+				} else {
+					notfox += animalsound(str) + " ";
 				}
 			}
-			
-			System.out.println(notfox);
-			
-			String[] notfoxArr = new String [arrsize(notfox)];
-			
-			int i = 0;
-				
-				for (int j = 0; j < notfox.length(); j++) {
-					
-					if (notfox.charAt(j) != ' ') {
-						notfoxArr[i] = notfoxArr[i] + notfox.charAt(j);
-					} 
-					else {
-						i++;
+
+			String[] notfoxArr = new String[arrsize(notfox)]; // gör om stringen notfox till en array
+
+			int j2 = 0;
+
+			for (int j = 0; j < notfoxArr.length; j++) {
+
+				notfoxArr[j] = "";
+
+				for (; j2 < notfox.length(); j2++) {
+
+					if (notfox.charAt(j2) != ' ') {
+						notfoxArr[j] += notfox.charAt(j2);
+					} else {
+						j2++;
+						break;
 					}
 				}
-				
-				for (int j = 0; j < notfoxArr.length; j++) {
-					System.out.println(notfoxArr[j] + " ");
+
+			}
+
+			String[] recordArr = new String[arrsize(record)]; // gör om stringen record till en array
+
+			int j3 = 0;
+
+			for (int j = 0; j < recordArr.length; j++) {
+
+				recordArr[j] = "";
+
+				for (; j3 < record.length(); j3++) {
+
+					if (record.charAt(j3) != ' ') {
+						recordArr[j] += record.charAt(j3);
+					} else {
+						j3++;
+						break;
+					}
 				}
 
-			
-			
-			
-			//String str = "Hello World!";
-			//String strNew = str.substring(0, str.length()-1); //strNew is 'Hello World'
+			}
 
-		// }
+			String foxsound = "";
+
+			boolean fox = true;
+
+			for (int j = 0; j < recordArr.length; j++) {
+
+				for (int k = 0; k < notfoxArr.length; k++) {
+
+					if (recordArr[j].equals(notfoxArr[k])) {
+						fox = false;
+					}
+
+				}
+
+				if (fox == true) {
+					foxsound += recordArr[j] + " ";
+				} else {
+					fox = true;
+				}
+
+			}
+
+			System.out.println(foxsound);
+
+		}
 
 	}
 
 	// methods
-
-/*	public static String arr(String str, int startAt) {
-
-		String arr = "";
-
-		for (int j = startAt; j < str.length(); j++) {
-
-			if (str.charAt(j) != ' ') {
-				arr = arr + str.charAt(j);
-			} else {
-				startAt = j;
-				break;
-			}
-		}
-
-		return arr;
-
-	} */
 
 	public static int arrsize(String str) {
 		int arrsize = 0;
