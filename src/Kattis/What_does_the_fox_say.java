@@ -2,8 +2,6 @@ package Kattis;
 
 import java.util.Scanner;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 public class What_does_the_fox_say {
 
 	public static void main(String[] args) {
@@ -11,91 +9,113 @@ public class What_does_the_fox_say {
 		Scanner sc = new Scanner(System.in);
 
 		int cases = sc.nextInt();
+		
+		String[] foxsounds = new String[cases];
 
 		for (int i = 0; i < cases; i++) {
 
-			String record = sc.nextLine(); // inspelningen.
-
-			String notfox = "";
-
-			while (true) { // skriver om alla animal goes sound till en string med bara sound
-				String str = sc.nextLine();
-				if (str.equals("what does the fox say?")) { // bryter när what does the fox say? skrivs.
-					break;
-				} else {
-					notfox += animalsound(str) + " ";
-				}
-			}
-
-			String[] notfoxArr = new String[arrsize(notfox)]; // gör om stringen notfox till en array
-
-			int j2 = 0;
-
-			for (int j = 0; j < notfoxArr.length; j++) {
-
-				notfoxArr[j] = "";
-
-				for (; j2 < notfox.length(); j2++) {
-
-					if (notfox.charAt(j2) != ' ') {
-						notfoxArr[j] += notfox.charAt(j2);
-					} else {
-						j2++;
-						break;
-					}
-				}
-
-			}
-
-			String[] recordArr = new String[arrsize(record)]; // gör om stringen record till en array
-
-			int j3 = 0;
-
-			for (int j = 0; j < recordArr.length; j++) {
-
-				recordArr[j] = "";
-
-				for (; j3 < record.length(); j3++) {
-
-					if (record.charAt(j3) != ' ') {
-						recordArr[j] += record.charAt(j3);
-					} else {
-						j3++;
-						break;
-					}
-				}
-
-			}
-
-			String foxsound = "";
-
-			boolean fox = true;
-
-			for (int j = 0; j < recordArr.length; j++) {
-
-				for (int k = 0; k < notfoxArr.length; k++) {
-
-					if (recordArr[j].equals(notfoxArr[k])) {
-						fox = false;
-					}
-
-				}
-
-				if (fox == true) {
-					foxsound += recordArr[j] + " ";
-				} else {
-					fox = true;
-				}
-
-			}
-
-			System.out.println(foxsound);
-
+			foxsounds[i] = fox();
+			System.out.println(foxsounds[i]);
 		}
+		
+//		for (int i = 0; i < foxsounds.length; i++) {
+//			System.out.println(foxsounds[i]);
+//		}
+		
+		
+//		1
+//		toot woof wa ow ow ow pa blub blub pa toot pa blub pa pa ow pow toot
+//		dog goes woof
+//		fish goes blub
+//		elephant goes toot
+//		seal goes ow
+//		what does the fox say?
 
 	}
 
 	// methods
+	
+	public static String fox() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String record = sc.nextLine(); // inspelningen.
+
+		String notfox = "";
+
+		while (true) { // skriver om alla animal goes sound till en string med bara sound
+			String str = sc.nextLine();
+			if (str.equals("what does the fox say?")) { // bryter när what does the fox say? skrivs.
+				break;
+			} else {
+				notfox += animalsound(str) + " ";
+			}
+		}
+
+		String[] notfoxArr = new String[arrsize(notfox)]; // gör om stringen notfox till en array
+
+		int j2 = 0;
+
+		for (int j = 0; j < notfoxArr.length; j++) {
+
+			notfoxArr[j] = "";
+
+			for (; j2 < notfox.length(); j2++) {
+
+				if (notfox.charAt(j2) != ' ') {
+					notfoxArr[j] += notfox.charAt(j2);
+				} else {
+					j2++;
+					break;
+				}
+			}
+
+		}
+
+		String[] recordArr = new String[arrsize(record)]; // gör om stringen record till en array
+
+		int j3 = 0;
+
+		for (int j = 0; j < recordArr.length; j++) {
+
+			recordArr[j] = "";
+
+			for (; j3 < record.length(); j3++) {
+
+				if (record.charAt(j3) != ' ') {
+					recordArr[j] += record.charAt(j3);
+				} else {
+					j3++;
+					break;
+				}
+			}
+
+		}
+
+		String foxsound = "";
+
+		boolean fox = true;
+
+		for (int j = 0; j < recordArr.length; j++) {
+
+			for (int k = 0; k < notfoxArr.length; k++) {
+
+				if (recordArr[j].equals(notfoxArr[k])) {
+					fox = false;
+				}
+
+			}
+
+			if (fox == true) {
+				foxsound += recordArr[j] + " ";
+			} else {
+				fox = true;
+			}
+
+		}
+
+		return foxsound;
+	}
 
 	public static int arrsize(String str) {
 		int arrsize = 0;
