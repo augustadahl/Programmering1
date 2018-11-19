@@ -15,12 +15,12 @@ public class What_does_the_fox_say {
 		for (int i = 0; i < cases; i++) {
 
 			foxsounds[i] = fox();
-			System.out.println(foxsounds[i]);
+//			System.out.println(foxsounds[i]);
 		}
 		
-//		for (int i = 0; i < foxsounds.length; i++) {
-//			System.out.println(foxsounds[i]);
-//		}
+		for (int i = 0; i < foxsounds.length; i++) {
+			System.out.println(foxsounds[i]);
+		}
 		
 		
 //		1
