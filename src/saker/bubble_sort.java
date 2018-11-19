@@ -1,5 +1,6 @@
 package saker;
 
+import java.io.Console;
 import java.util.Random;
 
 public class bubble_sort {
@@ -38,7 +39,7 @@ public class bubble_sort {
 					unsorted--;
 				}
 				compares++;
-			}			
+			}
 		}
 		
 		System.out.println("Sorted :");
@@ -48,6 +49,7 @@ public class bubble_sort {
 		}
 		System.out.println();
 		System.out.println("Compares = " + compares);
+		
 
 		
 		
