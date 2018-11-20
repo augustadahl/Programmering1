@@ -21,7 +21,46 @@ public class bubble_sort {
 		
 		System.out.println();
 
-		int compares = 0;
+//		int compares = 0;
+//
+//		int temp;
+//		
+//		int unsorted = intArr.length - 1;
+//
+//		while (unsorted > 0) { //Använder bubblesort för att sortera dessa värden efter storleksordning
+//			unsorted = intArr.length - 1;
+//			for (int i = 0; i < intArr.length - 1; i++) {
+//				if (intArr[i] > intArr[i + 1]) {
+//					temp = intArr[i];
+//					intArr[i] = intArr[i + 1];
+//					intArr[i +1] = temp;
+//				}
+//				else {
+//					unsorted--;
+//				}
+//				compares++;
+//			}
+//		}
+		
+		intArr = Bubblesort(intArr);
+		
+		System.out.println("Sorted :");
+		
+		for (int i = 0; i < intArr.length; i++) {
+			System.out.print(intArr[i] + " ");
+		}
+		System.out.println();
+		//System.out.println("Compares = " + compares);
+		
+
+		
+		
+		
+	}
+	
+	public static int[] Bubblesort(int[] intArr) {
+		
+		//int compares = 0;
 
 		int temp;
 		
@@ -38,21 +77,11 @@ public class bubble_sort {
 				else {
 					unsorted--;
 				}
-				compares++;
+				//compares++;
 			}
 		}
 		
-		System.out.println("Sorted :");
-		
-		for (int i = 0; i < intArr.length; i++) {
-			System.out.print(intArr[i] + " ");
-		}
-		System.out.println();
-		System.out.println("Compares = " + compares);
-		
-
-		
-		
+		return intArr;
 		
 	}
 
