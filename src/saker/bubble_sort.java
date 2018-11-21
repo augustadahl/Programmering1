@@ -1,6 +1,5 @@
 package saker;
 
-import java.io.Console;
 import java.util.Random;
 
 public class bubble_sort {
@@ -86,3 +85,4 @@ public class bubble_sort {
 	}
 
 }
+
