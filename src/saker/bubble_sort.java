@@ -10,15 +10,18 @@ public class bubble_sort {
 		
 		System.out.println("Unsorted :");
 
-		int[] intArr = new int[random.nextInt(50 - 20) + 20]; //Skapar en int array som är mellan 50 och 20 stor
+		int[] intArr = Mixed
+				
+				
+				//new int[random.nextInt(50 - 20) + 20]; //Skapar en int array som är mellan 50 och 20 stor
 
-		for (int i = 0; i < intArr.length; i++) { //Ger platserna i arrayen en int mellan 0 och 100
-
-			intArr[i] = random.nextInt(100 - 0) + 0;
-			System.out.print(intArr[i] + " ");
-		}
-		
-		System.out.println();
+//		for (int i = 0; i < intArr.length; i++) { //Ger platserna i arrayen en int mellan 0 och 100
+//
+//			intArr[i] = random.nextInt(100 - 0) + 0;
+//			System.out.print(intArr[i] + " ");
+//		}
+//		
+//		System.out.println();
 
 //		int compares = 0;
 //
