@@ -1,44 +1,43 @@
 package Kattis;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class What_does_the_fox_say {
 
+	public static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-
-		int cases = sc.nextInt();
+		int cases = sc.nextInt();sc.nextLine();
 		
 		String[] foxsounds = new String[cases];
 
 		for (int i = 0; i < cases; i++) {
 
 			foxsounds[i] = fox();
+//			System.out.println(foxsounds[i]);
+		}
+
+		for (int i = 0; i < foxsounds.length; i++) {
 			System.out.println(foxsounds[i]);
 		}
-		
-//		for (int i = 0; i < foxsounds.length; i++) {
-//			System.out.println(foxsounds[i]);
-//		}
-		
-		
-//		1
-//		toot woof wa ow ow ow pa blub blub pa toot pa blub pa pa ow pow toot
-//		dog goes woof
-//		fish goes blub
-//		elephant goes toot
-//		seal goes ow
-//		what does the fox say?
+
+//1
+//toot woof wa ow ow ow pa blub blub pa toot pa blub pa pa ow pow toot
+//dog goes woof
+//fish goes blub
+//elephant goes toot
+//seal goes ow
+//what does the fox say?
 
 	}
 
 	// methods
-	
+
 	public static String fox() {
-		
-		Scanner sc = new Scanner(System.in);
-		
+
+
 		String record = sc.nextLine(); // inspelningen.
 
 		String notfox = "";
@@ -71,6 +70,7 @@ public class What_does_the_fox_say {
 			}
 
 		}
+		// System.out.println(Arrays.toString(notfoxArr));
 
 		String[] recordArr = new String[arrsize(record)]; // gör om stringen record till en array
 
@@ -91,6 +91,7 @@ public class What_does_the_fox_say {
 			}
 
 		}
+		// System.out.println(Arrays.toString(recordArr));
 
 		String foxsound = "";
 

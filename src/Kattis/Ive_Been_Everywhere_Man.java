@@ -40,6 +40,7 @@ public class Ive_Been_Everywhere_Man {
 					}
 					cities[i]++;
 					tested[j] = true;
+					
 				}			
 			}	
 		}
