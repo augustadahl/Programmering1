@@ -37,22 +37,20 @@ public class Renoveringen {
 		
 		for (int i = haslenght.length - 1; i >= 0; i--) {
 			while (true) {
-				
-				
-				if (needlenght[temp] <= haslenght[i]) {
-					temp--;
-					needlenght[temp] = 0;
-					break;
-				} else {
-					temp--;
-				}
-				
 				if (temp < 0) {
 					break;
 				}
 				
+				if (needlenght[temp] <= haslenght[i]) {
+					needlenght[temp] = 0;
+					temp--;
+					break;
+				} else {
+					temp--;
+				}
+
 			}
-			
+		
 		}
 		
 		
@@ -73,9 +71,9 @@ public class Renoveringen {
 			if (needlenght[i] != 0) {
 				System.out.print(needlenght[i] + " ");
 			}
+			
 		}
-		
-		
+	
 	}	
 	
 }
