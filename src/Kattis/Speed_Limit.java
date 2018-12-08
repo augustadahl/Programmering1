@@ -22,16 +22,20 @@ public class Speed_Limit {
 			if (N == -1) {
 				break;
 			}
+			int temp = 0;
 
 			for (int i = 0; i < N; i++) {
-				miles += sc.nextInt() * sc.nextInt();
+				int S = sc.nextInt();
+				int T = sc.nextInt();
+				miles += S * (T - temp);
+				temp = T;
 			} 
 			
 			log.add(miles);
 		}
 		
 		for (int i = 0; i < log.size(); i++) {
-			System.out.println(log.get(i) + "miles");
+			System.out.println(log.get(i) + " miles");
 		}
 		
 	}
