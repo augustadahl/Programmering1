@@ -1,19 +1,39 @@
 package Kattis;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class numbers_on_a_tree {
+	
+	//Programmet fungerar felfritt men är för ineffektivt enligt kattis (får memory limit exceeded)
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int H = sc.nextInt() + 1;
+		String input = sc.nextLine();
 		
+		sc.close();
+		
+		int space = 0;
+		
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == ' ') {
+				space = i;
+				break;
+			}
+		}
+		
+		int H;
+		if(space != 0) {
+			H = (Integer.parseInt(input.substring(0, space))) + 1;
+			input = input.substring(space + 1, input.length()); 
+		}
+		else {
+			H = (Integer.parseInt(input.substring(0, input.length()))) + 1;
+			input = ""; 
+		}
+
 		int[][] tree = new int [H][];
-		
-		
 		
 		for (int i = 0; i < tree.length; i++) {
 		
@@ -24,7 +44,6 @@ public class numbers_on_a_tree {
 				tree[i] = new int[(int) Math.pow(2, i)];
 			}
 			
-//			System.out.println(Arrays.toString(tree[i]));
 		}
 		
 		int value = 1;
@@ -34,12 +53,23 @@ public class numbers_on_a_tree {
 				tree[i][j] = value;
 				value++;
 			}
-			System.out.println(Arrays.toString(tree[i]));
 		}
 		
+		int possition = 0;
+		int place = tree[0][0];
 		
+		if (!input.isEmpty()) {
+			for (int i = 0; i < input.length(); i++) {
+				if (input.charAt(i) == 'L') {
+					possition = ((possition + 1) * 2) - 2;
+				} else {
+					possition = ((possition + 1) * 2) - 1;
+				}
+			} 
+			place = tree[input.length()][possition];
+		}
 		
-		
+		System.out.println(place);
 		
 	}
 	
