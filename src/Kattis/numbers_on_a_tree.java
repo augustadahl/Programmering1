@@ -65,8 +65,10 @@ public class numbers_on_a_tree {
 				} else {
 					possition = ((possition + 1) * 2) - 1;
 				}
+				place = tree[input.length()][possition];
+				System.out.println(place);
 			} 
-			place = tree[input.length()][possition];
+			
 		}
 		
 		System.out.println(place);
