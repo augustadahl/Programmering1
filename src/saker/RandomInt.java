@@ -7,7 +7,7 @@ public class RandomInt {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(Arrays.toString(Mixed(5)));
+		System.out.println(Arrays.toString(Mixed(10)));
 		
 		
 	}
