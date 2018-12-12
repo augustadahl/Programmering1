@@ -1,6 +1,5 @@
 package Kattis;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class What_does_the_fox_say {

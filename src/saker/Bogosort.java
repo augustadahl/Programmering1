@@ -8,7 +8,7 @@ public class Bogosort {
 	public static Random random = new Random();
 
 	public static void main(String[] args) {
-		int[] bogo = {1,2,3,4,5,6,7,89,9,4,3,23,4,32,5542,2,1,57,47,4,57,8,8};
+		int[] bogo = {1,3,2,4,6,5,9,8,7};
 		bogosort(bogo);
 	}
 	
