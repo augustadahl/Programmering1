@@ -1,14 +1,13 @@
 package Kattis;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Kitten_on_a_tree {
 
+	public static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
 		
 		int current = sc.nextInt(); sc.nextLine();
 		
@@ -16,7 +15,7 @@ public class Kitten_on_a_tree {
 		
 		while (true) {
 			String temp = sc.nextLine();
-			
+		
 			if (!temp.equals("-1")) {
 				input.add(temp);
 			} else {
@@ -36,6 +35,31 @@ public class Kitten_on_a_tree {
 				branch[i][j] = Integer.parseInt(temp2[j]);
 			}
 		
+		}
+		
+		boolean tree = true;
+		
+		ArrayList<Integer> way = new ArrayList<Integer>();
+		
+		way.add(current);
+		
+		while (tree) {
+			
+			tree = false;
+			
+			for (int i = 0; i < branch.length; i++) {
+				for (int j = 1; j < branch[i].length; j++) {
+					if (current == branch[i][j]) {
+						current = branch[i][0];	
+						way.add(current);
+						tree = true;
+					}
+				}
+			}
+		}
+		
+		for (int i = 0; i < way.size(); i++) {
+			System.out.print(way.get(i) + " ");
 		}
 		
 		

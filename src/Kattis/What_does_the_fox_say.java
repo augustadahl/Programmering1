@@ -22,14 +22,6 @@ public class What_does_the_fox_say {
 			System.out.println(foxsounds[i]);
 		}
 
-//1
-//toot woof wa ow ow ow pa blub blub pa toot pa blub pa pa ow pow toot
-//dog goes woof
-//fish goes blub
-//elephant goes toot
-//seal goes ow
-//what does the fox say?
-
 	}
 
 	// methods
