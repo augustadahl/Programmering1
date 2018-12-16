@@ -50,6 +50,7 @@ public class Reverse_rot {
 	}
 	
 	public static char newChar(char chr, int places) {
+		
 		String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_.";
 		
 		for (int i = 0; i < alpha.length(); i++) {
