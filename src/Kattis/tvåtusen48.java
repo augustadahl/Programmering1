@@ -23,9 +23,16 @@ public class tvåtusen48 {
 
 		grid = mover(grid, dirr);
 
-		for (int j = 0; j < 4; j++) {
-			System.out.println(Arrays.toString(grid[j]));
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				System.out.print(grid[i][j] + " ");
+			}
+			System.out.println();
 		}
+		
+//		for (int j = 0; j < 4; j++) {
+//			System.out.println(Arrays.toString(grid[j]));
+//		}
 
 	}
 
@@ -41,7 +48,7 @@ public class tvåtusen48 {
 
 					for (int col = 1; col < 4; col++) {
 
-						if (grid[row][col] == grid[row][col - 1] && grid[row][col] != 0 && !fused[col-1]) {
+						if (grid[row][col] == grid[row][col - 1] && grid[row][col] != 0 && !fused[col-1] && !fused[col]) {
 							grid[row][col - 1] = grid[row][col] + grid[row][col - 1];
 							grid[row][col] = 0;
 							fused[col - 1] = true;
@@ -66,7 +73,7 @@ public class tvåtusen48 {
 
 					for (int row = 1; row < 4; row++) {
 
-						if (grid[row][col] == grid[row - 1][col] && grid[row][col] != 0 && !fused[row-1]) {
+						if (grid[row][col] == grid[row - 1][col] && grid[row][col] != 0 && !fused[row-1] && !fused[row]) {
 							grid[row - 1][col] = grid[row][col] + grid[row - 1][col];
 							grid[row][col] = 0;
 							fused[row - 1] = true;
@@ -92,7 +99,7 @@ public class tvåtusen48 {
 
 					for (int col = 2; col >= 0; col--) {
 
-						if (grid[row][col] == grid[row][col + 1] && grid[row][col] != 0 && !fused[col+1]) {
+						if (grid[row][col] == grid[row][col + 1] && grid[row][col] != 0 && !fused[col+1] && !fused[col]) {
 							grid[row][col + 1] = grid[row][col] + grid[row][col + 1];
 							grid[row][col] = 0;
 							fused[col + 1] = true;
@@ -117,7 +124,7 @@ public class tvåtusen48 {
 
 					for (int row = 2; row >= 0; row--) {
 
-						if (grid[row][col] == grid[row + 1][col] && grid[row][col] != 0 && !fused[row+1]) {
+						if (grid[row][col] == grid[row + 1][col] && grid[row][col] != 0 && !fused[row+1] && !fused[row]) {
 							grid[row + 1][col] = grid[row][col] + grid[row + 1][col];
 							grid[row][col] = 0;
 							fused[row + 1] = true;
