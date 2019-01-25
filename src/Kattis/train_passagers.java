@@ -31,7 +31,7 @@ public class train_passagers {
 			
 			if (passengers > capacity) {
 				possible = false;
-			}
+			} 
 			
 			
 			waiting = sc.nextInt();
@@ -52,6 +52,8 @@ public class train_passagers {
 		else {
 			System.out.println("impossible");
 		}
+		
+		
 		
 		
 		

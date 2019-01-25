@@ -22,7 +22,7 @@ public class Game_2048 {
 
 		grid = spawner(grid);
 		grid = spawner(grid);
-		
+
 		System.out.println("Current game status:");
 
 		for (int i = 0; i < grid.length; i++) {
@@ -72,29 +72,37 @@ public class Game_2048 {
 	}
 
 	public static boolean tester(int[][] grid) {
+		
+		int[][] temp = new int[4][4];
+		
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp[i].length; j++) {
+				temp[i][j] = grid[i][j];
+			}
+		}
+		
 		boolean possible = false;
 
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				if (grid[i][j] == 0) {
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp[i].length; j++) {
+				if (temp[i][j] == 0) {
 					possible = true;
 					System.out.println("possible");
 				}
 			}
 		}
 
-		int[][] temp = grid;
-
+		
 		if (!possible) {
-			grid = mover(grid, 4);
+			temp = mover(temp, 4);
 			
-			for (int i = 0; i < temp.length; i++) {
-				System.out.println(Arrays.toString(temp[i]) + Arrays.toString(grid[i]));
+			for (int i = 0; i < grid.length; i++) {
+				System.out.println(Arrays.toString(grid[i]) + Arrays.toString(temp[i]));
 			}
 
-			for (int i = 0; i < temp.length; i++) {
-				for (int j = 0; j < temp[i].length; j++) {
-					if (temp[i][j] != grid[i][j]) {
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid[i].length; j++) {
+					if (grid[i][j] != temp[i][j]) {
 						possible = true;
 						System.out.println("possible left");
 					}
@@ -103,56 +111,58 @@ public class Game_2048 {
 
 		}
 
-		if (!possible) {
-			grid = mover(grid, 8);
 
-			for (int i = 0; i < temp.length; i++) {
-				for (int j = 0; j < temp[i].length; j++) {
-					if (temp[i][j] != grid[i][j]) {
+		if (!possible) {
+			temp = mover(temp, 8);
+
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid[i].length; j++) {
+					if (grid[i][j] != temp[i][j]) {
 						possible = true;
 						System.out.println("possible up");
 					}
 				}
 			}
 			
-			for (int i = 0; i < temp.length; i++) {
-				System.out.println(Arrays.toString(temp[i]) + Arrays.toString(grid[i]));
+			for (int i = 0; i < grid.length; i++) {
+				System.out.println(Arrays.toString(grid[i]) + Arrays.toString(temp[i]));
 			}
 			
 		}
 
 		if (!possible) {
-			grid = mover(grid, 6);
+			temp = mover(temp, 6);
 
-			for (int i = 0; i < temp.length; i++) {
-				for (int j = 0; j < temp[i].length; j++) {
-					if (temp[i][j] != grid[i][j]) {
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid[i].length; j++) {
+					if (grid[i][j] != temp[i][j]) {
 						possible = true;
 						System.out.println("possible right");
 					}
 				}
 			}
 			
-			for (int i = 0; i < temp.length; i++) {
-				System.out.println(Arrays.toString(temp[i]) + Arrays.toString(grid[i]));
+			for (int i = 0; i < grid.length; i++) {
+				System.out.println(Arrays.toString(grid[i]) + Arrays.toString(temp[i]));
 			}
 			
 		}
 
-		if (!possible) {
-			grid = mover(grid, 2);
 
-			for (int i = 0; i < temp.length; i++) {
-				for (int j = 0; j < temp[i].length; j++) {
-					if (temp[i][j] != grid[i][j]) {
+		if (!possible) {
+			temp = mover(temp, 2);
+
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid[i].length; j++) {
+					if (grid[i][j] != temp[i][j]) {
 						possible = true;
 						System.out.println("possible down");
 					}
 				}
 			}
 			
-			for (int i = 0; i < temp.length; i++) {
-				System.out.println(Arrays.toString(temp[i]) + Arrays.toString(grid[i]));
+			for (int i = 0; i < grid.length; i++) {
+				System.out.println(Arrays.toString(grid[i]) + Arrays.toString(temp[i]));
 			}
 			
 		}
