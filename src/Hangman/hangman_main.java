@@ -14,6 +14,11 @@ public class hangman_main {
 		
 		String Input = sc.nextLine();
 		
+		for (int i = 0; i < 30; i++) {
+			System.out.println();
+		}
+		
+		
 		char[] SecretHidden = new char[Input.length()];
 		
 		char[] SecretVisible = new char[Input.length()];
@@ -133,7 +138,7 @@ public class hangman_main {
 		}
 		
 		if (!yes) {
-			System.out.println("WRONG");
+			System.out.println("Already taken");
 			return false;
 		}
 		else {
