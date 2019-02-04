@@ -13,7 +13,7 @@ public class rekursion {
 		
 		System.out.println(sum(10));
 		
-		System.out.println(reverse("!sTeGguN NeKcIhC"));
+		System.out.println(reverse("Nils e bäst!"));
 		
 		System.out.println(fibo(7));
 		

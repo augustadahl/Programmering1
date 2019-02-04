@@ -21,13 +21,11 @@ public class Coloring_Socks {
 			SockArr[i] = sc.nextInt();
 		}
 		
-		int machines = 0;
+		int machines = 1;
 		
 		Arrays.sort(SockArr);
 		
 		int pivot = 0;
-		
-		machines++;
 		
 		for (int i = 1; i < SockArr.length; i++) {
 			
