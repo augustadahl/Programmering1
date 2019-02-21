@@ -3,7 +3,7 @@ package läxor;
 import java.util.Random;
 import java.util.Scanner;
 
-public class gissa_talet {
+public class gissa_talet_William {
 
 	public static void main(String[] args) {
 
