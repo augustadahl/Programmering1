@@ -2,18 +2,31 @@ package Läxa_Hangman;
 
 import hangman.HangmanConsoleWindow;
 
+/**
+ * Denna class är till för att hålla koll på liv i spelet hänga gubbe, den
+ * skriver ut gubben och så många liv man har kvar.
+ * 
+ * @author August Ådahl
+ *
+ */
 public class gubbe {
 
 	public int lives;
-
+//bestämmer ens liv
 	public gubbe() {
 		lives = 9;
 	}
-
+	
+	/**
+	 * tar bort ett liv
+	 */
 	public void subtract() {
 		lives--;
 	}
-
+	
+	/**
+	 * skriver ut gubben beroende på hur många liv man har kvar
+	 */
 	public void show(HangmanConsoleWindow console) {
 
 		switch (lives) {
