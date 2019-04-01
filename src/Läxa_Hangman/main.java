@@ -65,8 +65,6 @@ public class main {
 		
 		console.println(word.showWrong());
 		
-		
-
 	}
 
 	/**

@@ -126,7 +126,7 @@ public class gubbe {
 			break;
 		}
 
-		console.println("Guesses remaining: " + lives);
+		console.println("Gissningar kvar: " + lives);
 
 	}
 
