@@ -64,7 +64,7 @@ public class secretword {
 
 		letter = Character.toLowerCase(letter);
 
-		if (letter != ' ' && letter != '-' && notTaken(letter)) {
+		if (bokstav(letter) && notTaken(letter)) {
 
 			String new_vis = "";
 			boolean correct = false;
@@ -122,6 +122,25 @@ public class secretword {
 			return false;
 		}
 
+	}
+	
+	/**
+	 * kollar om en char är en bokstav i det svenska alfabetet
+	 * @param letter
+	 * @return boolean
+	 */
+	public boolean bokstav(char letter) {
+		String abc = "abcdefghijklmnopqrstuvwxyzåäö";
+		
+		boolean isAbc = false;
+		
+		for (int i = 0; i < abc.length(); i++) {
+			if (letter == abc.charAt(i)) {
+				isAbc = true;
+			}
+		}
+		
+		return isAbc;
 	}
 
 }
