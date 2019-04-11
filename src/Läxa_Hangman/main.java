@@ -13,60 +13,103 @@ public class main {
 
 	public static HangmanConsoleWindow console = new HangmanConsoleWindow();
 
-	public static gubbe hangman = new gubbe();
-
-	public static secretword word = new secretword(DocReader());
-
 	public static void main(String[] args) {
 
+		//skriver ut meddelande
 		
-		
-		while (hangman.lives > 0 && !word.finished()) {
+		console.println("Välkomen till hänga gubbe!");
 
+		console.println("Regler: Du har 9 liv. Du förlorar ett liv när du gissar fel. Klicka på en bokstav för att gissa på den.");
+		
+		console.println();
+		
+		console.println();
+		
+		console.println("Klicka valfri bokstav för att börja");
+		
+		//om man klickar går man vidare
+		
+		console.nextChar();
+		
+		console.clear();
+		
+		//loopar tills spelet avslutas
+		
+		while (true) {
 			
+			//skapar ett nytt ord och en ny gubbe att avrätta
 			
-			hangman.show(console);
+			gubbe hangman = new gubbe();
+
+			secretword word = new secretword(DocReader());
 			
+			//loopar tills man förlorar eller vinner
+			
+			while (hangman.lives > 0 && !word.finished()) {
+
+				//visar gubben, ordet och allt annat
+				
+				hangman.show(console);
+
+				console.println();
+
+				console.println(word.showVisible());
+
+				console.println();
+
+				console.println(word.showWrong());
+				
+				//tar in ett ord som man gissar på
+
+				char letter = console.nextChar();
+
+				word.guess(letter, hangman);
+
+				console.clear();
+
+			}
+			
+			//skriver ut att man antingen vunnit eller förlorat + allt annat
+
+			if (word.finished()) {
+				console.println("Du vann!!");
+			}
+
+			if (hangman.lives == 0) {
+				console.println("Du förlorade! Rätt ord var " + word.showHidden());
+			}
+
 			console.println();
-			
+
+			hangman.show(console);
+
+			console.println();
+
 			console.println(word.showVisible());
-			
+
 			console.println();
 
 			console.println(word.showWrong());
 			
-			char letter = console.nextChar();
-
-			word.guess(letter, hangman);
-
+			console.println();
 			
+			//för att avgöra hur många fler gubbar som ska avrättas får man här ett alternativ
+			
+			console.println("tryck 1 för att köra igen");
+			
+			console.println("tryck 2 för att avsluta");
+			
+			char exit = console.nextChar();
+			
+			if (exit == '2') {
+				break;
+			}
 			
 			console.clear();
-				
 		}
 		
-		if (word.finished()) {
-			console.println("Du vann!!");
-		}
+		console.exit();
 		
-		if (hangman.lives == 0) {
-			console.println("Du förlorade! Rätt ord var " + word.showHidden());
-		}
-		
-		console.println();
-		
-		hangman.show(console);
-		
-		console.println();
-		
-		console.println(word.showVisible());
-
-		console.println();
-		
-		console.println(word.showWrong());
-		
-		
-
 	}
 
 	/**
